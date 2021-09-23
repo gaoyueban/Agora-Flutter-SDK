@@ -225,6 +225,7 @@ class RtcTextureView extends StatefulWidget {
   /// - The default value is the empty string "". Use the default value if the user joins the channel using the [RtcEngine.joinChannel] method in the [RtcEngine] class.
   /// - If the user joins the channel using the [RtcChannel.joinChannel] method in the [RtcChannel] class, set this parameter as the channelId of the [RtcChannel] object.
   final String? channelId;
+  final ScreenshotController screenshotController;
 
   /// The rendering mode of the video view.
   final VideoRenderMode renderMode;
@@ -252,6 +253,7 @@ class RtcTextureView extends StatefulWidget {
   RtcTextureView({
     Key? key,
     required this.uid,
+    required this.screenshotController,
     this.channelId,
     this.renderMode = VideoRenderMode.Hidden,
     this.mirrorMode = VideoMirrorMode.Auto,
