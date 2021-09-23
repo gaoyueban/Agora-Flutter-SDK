@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
+import 'package:screenshot/screenshot.dart';
 
 import 'src/enums.dart';
 import 'src/rtc_render_view.dart';
