@@ -11,6 +11,7 @@ class SurfaceView extends RtcSurfaceView {
   SurfaceView({
     Key? key,
     required int uid,
+    required ScreenshotController screenshotController,
     String? channelId,
     renderMode = VideoRenderMode.Hidden,
     mirrorMode = VideoMirrorMode.Auto,
@@ -22,6 +23,7 @@ class SurfaceView extends RtcSurfaceView {
         super(
           key: key,
           uid: uid,
+          screenshotController:screenshotController,
           channelId: channelId,
           renderMode: renderMode,
           mirrorMode: mirrorMode,
