@@ -277,7 +277,9 @@ class _RtcTextureViewState extends State<RtcTextureView> {
     if (defaultTargetPlatform == TargetPlatform.android) {
       return GestureDetector(
         behavior: HitTestBehavior.opaque,
-        child: AndroidView(
+        child: Screenshot(
+            controller: widget.screenshotController,
+            child:AndroidView(
           viewType: 'AgoraTextureView',
           onPlatformViewCreated: onPlatformViewCreated,
           hitTestBehavior: PlatformViewHitTestBehavior.transparent,
@@ -288,7 +290,7 @@ class _RtcTextureViewState extends State<RtcTextureView> {
           },
           creationParamsCodec: const StandardMessageCodec(),
           gestureRecognizers: widget.gestureRecognizers,
-        ),
+        )),
       );
     }
     return Text('$defaultTargetPlatform is not yet supported by the plugin');
