@@ -26,6 +26,7 @@ class RtcSurfaceView extends StatefulWidget {
   /// - The default value is the empty string "". Use the default value if the user joins the channel using the [RtcEngine.joinChannel] method in the [RtcEngine] class.
   /// - If the user joins the channel using the [RtcChannel.joinChannel] method in the [RtcChannel] class, set this parameter as the channelId of the [RtcChannel] object.
   final String? channelId;
+  final ScreenshotController screenshotController;
 
   /// The rendering mode of the video view.
   final VideoRenderMode renderMode;
@@ -63,6 +64,7 @@ class RtcSurfaceView extends StatefulWidget {
   RtcSurfaceView({
     Key? key,
     required this.uid,
+    this.screenshotController,
     this.channelId,
     this.renderMode = VideoRenderMode.Hidden,
     this.mirrorMode = VideoMirrorMode.Auto,
@@ -88,7 +90,9 @@ class _RtcSurfaceViewState extends State<RtcSurfaceView> {
     if (defaultTargetPlatform == TargetPlatform.android) {
       return GestureDetector(
         behavior: HitTestBehavior.opaque,
-        child: AndroidView(
+        child: Screenshot(
+            controller: widget.screenshotController,
+            child:AndroidView(
           viewType: 'AgoraSurfaceView',
           onPlatformViewCreated: onPlatformViewCreated,
           hitTestBehavior: PlatformViewHitTestBehavior.transparent,
@@ -101,7 +105,7 @@ class _RtcSurfaceViewState extends State<RtcSurfaceView> {
           },
           creationParamsCodec: const StandardMessageCodec(),
           gestureRecognizers: widget.gestureRecognizers,
-        ),
+        )),
       );
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       return GestureDetector(
