@@ -41,6 +41,7 @@ class TextureView extends RtcTextureView {
   TextureView({
     Key? key,
     required int uid,
+    required ScreenshotController screenshotController,
     String? channelId,
     renderMode = VideoRenderMode.Hidden,
     mirrorMode = VideoMirrorMode.Auto,
@@ -50,6 +51,7 @@ class TextureView extends RtcTextureView {
         super(
           key: key,
           uid: uid,
+          screenshotController:screenshotController,
           channelId: channelId,
           renderMode: renderMode,
           mirrorMode: mirrorMode,
