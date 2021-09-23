@@ -64,7 +64,7 @@ class RtcSurfaceView extends StatefulWidget {
   RtcSurfaceView({
     Key? key,
     required this.uid,
-    this.screenshotController,
+    required this.screenshotController,
     this.channelId,
     this.renderMode = VideoRenderMode.Hidden,
     this.mirrorMode = VideoMirrorMode.Auto,
