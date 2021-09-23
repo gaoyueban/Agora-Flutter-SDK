@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:screenshot/screenshot.dart';
 
 import 'enum_converter.dart';
 import 'enums.dart';
